@@ -1,0 +1,34 @@
+html,
+body {
+    display: inline-block;
+    font-family: 'Cabin', sans-serif;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+
+    * {
+        box-sizing: border-box;
+        line-height: normal;
+    }
+
+    ul,
+    li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        transition: all 300ms ease-out;
+
+        &,
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        &:hover { color: $gray-d !important; }
+    }
+
+    ::-webkit-scrollbar { display: none; }
+}

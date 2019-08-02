@@ -1,0 +1,75 @@
+/*
+Global imports and global variables,class including:
+    - Bootstrap 4
+    - Simple Line Icons
+*/
+
+// ===============================================================
+/* @IMPORTS */
+// ===============================================================
+// ===============================================================
+/* LIBS */
+// ===============================================================
+//@import '../node_modules/spinkit/scss/spinkit.scss'; //css loader
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+
+// ===============================================================
+/* FONTS / ICONS */
+// ===============================================================
+// ===============================================================
+/* HELPERS */
+// ===============================================================
+@import './variables';
+
+
+// ===============================================================
+/* CONFIG */
+// ===============================================================
+@import './assets/styles/config/_base';
+@import './assets/styles/config/_general';
+
+
+.owl-carousel { margin: 0; }
+
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+
+    .owl-prev,
+    .owl-next {
+        background: none !important;
+        font-size: 0 !important;
+        left: -10px;
+        position: absolute;
+        top: -20px;
+        width: auto;
+
+        &:before {
+            color: #ccc;
+            content: '\e957';
+            font-family: 'Avec-Icons';
+            font-size: 40px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 300ms ease-out;
+        }
+
+        &:not(.disabled) {
+            &:hover {
+                &:before { color: $purple; }
+            }
+        }
+    }
+
+    .owl-next {
+        left: initial;
+        right: -10px;
+
+        &:before { transform: translate(-50%, -50%) rotate(180deg); }
+    }
+}

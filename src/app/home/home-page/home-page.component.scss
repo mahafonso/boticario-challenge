@@ -1,0 +1,117 @@
+@import '../../../variables';
+@import '../../../assets/styles/helpers/mixins/transition';
+
+main {
+    text-align: center;
+
+    .wrapper {
+        @media screen and (max-width: 768px) { padding: 0; }
+    }
+
+    .main__title {
+        display: inline-block;
+        font-size: 14px;
+        margin: 20px auto 10px;
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        width: 145px;
+
+        &:before,
+        &:after {
+            content: '';
+            background: $gray;
+            height: 1px;
+            left: -190px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 170px;
+
+            @media screen and (max-width: 768px) { display: none; }
+        }
+
+        &:after {
+            left: initial;
+            right: -190px;
+        }
+    }
+
+    .main__products {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 768px) {
+            -webkit-overflow-scrolling: touch;
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        .product-item {
+            background: #f0f0f0;
+            cursor: pointer;
+            display: flex;
+            flex: 1 30%;
+            height: 370px;
+            margin: 10px 15px;
+
+            &:first-child,
+            &:nth-child(3n + 1) { margin-left: 0; }
+
+            &:nth-child(3n),
+            &:last-child { margin-right: 0; }
+
+            .item__wrapper {
+                align-items: center;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .product-image {
+                @include singleTransition();
+                height: 100px;
+                margin: 0 auto 70px;
+                width: 100px;
+            }
+
+            .product-name {
+                @include singleTransition();
+                font-size: 12px;
+                height: 30px;
+                margin-bottom: 15px;
+                max-width: 250px;
+                text-align: center;
+                text-transform: uppercase;
+                white-space: initial;
+            }
+
+            .product-price {
+                @include singleTransition();
+                font-size: 12px;
+            }
+
+            &:hover {
+                .product-image { transform: scale(1.2); }
+
+                .product-name,
+                .product-price { font-weight: bold; }
+            }
+
+            @media screen and (max-width: 768px) {
+                display: inline-block;
+                height: auto;
+                margin: 10px 15px !important;
+                min-width: 300px;
+                padding: 70px 0;
+
+                &:first-child { margin-left: 20px !important; }
+
+                &:last-child { margin-right: 20px !important; }
+            }
+        }
+    }
+}

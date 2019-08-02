@@ -1,0 +1,31 @@
+<header>
+    <div class="wrapper">
+        <ul class="header__items">
+            <li class="item main">
+                <a href="/" class="item-link">Minha Loja</a>
+            </li>
+
+            <li class="item">
+                <a href="/perfumaria" class="item-link">Perfumaria</a>
+            </li>
+
+            <li class="item">
+                <a href="/maquiagem" class="item-link">Maquiagem</a>
+            </li>
+
+            <li class="item">
+                <a href="/cabelos" class="item-link">Cabelos</a>
+            </li>
+
+            <li class="item">
+                <a href="/infantil" class="item-link">Infantil</a>
+            </li>
+        </ul>
+
+        <div class="header__cart" (mouseover)="changeShowCartValue()" (mouseleave)="changeHideCartValue()">
+            <img src="/assets/imgs/icon__cart.png" alt="Carrinho" class="cart__icon">
+
+            <span [hidden]="!showCartValue" class="cart__value">R$ {{cartValue}}</span>
+        </div>
+    </div>
+</header>

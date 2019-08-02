@@ -1,0 +1,9 @@
+.wrapper {
+    color: #8f8f8f;
+    margin: 0 auto;
+    max-width: 1020px;
+    padding: 0 20px;
+    width: 100%;
+
+    @media screen and (max-width: 768px) { padding: 0 20px; }
+}

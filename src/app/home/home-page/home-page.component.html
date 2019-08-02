@@ -1,0 +1,17 @@
+<main>
+    <div class="wrapper">
+        <span class="main__title">Últimos Produtos</span>
+
+        <ul class="main__products">
+            <li *ngFor="let product of productsList; let i = index" class="product-item" (click)="addProductToCart(product.Value)">
+                <div class="item__wrapper">
+                    <img src="{{product.images[0].imageUrl}}" alt="{{product.name}}" class="product-image">
+
+                    <span class="product-name">{{product.name}}</span>
+
+                    <span class="product-price">R$ {{product.Value}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</main>
